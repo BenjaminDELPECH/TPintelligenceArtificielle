@@ -1,8 +1,3 @@
-
-prediction = model.predict()
-print(prediction)
-
-
 from __future__ import print_function
 import keras
 from keras.datasets import mnist
