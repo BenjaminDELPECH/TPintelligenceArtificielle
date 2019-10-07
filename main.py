@@ -5,8 +5,10 @@ from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 from keras import backend as K
+import time
 
 
+time1 = time.time()
 batch_size = 128
 num_classes = 10
 epochs = 3
@@ -60,5 +62,8 @@ model.fit(x_train, y_train,
           verbose=1,
           validation_data=(x_test, y_test))
 score = model.evaluate(x_test, y_test, verbose=0)
+model.save("model.h5")
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
+
+print("temps d'éxécution total:" + str(time.time()-time1))
