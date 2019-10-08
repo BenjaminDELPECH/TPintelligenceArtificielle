@@ -6,10 +6,10 @@ import numpy as np
 img_test = cv2.imread('numero.bmp', 0)
 
 
-def separate_number(img):
+def separate_numbers_from_img(img):
     transposed = np.transpose(img)
     parsing_img = False
-    img_tab = []
+    extracted_numbers = []
     new_img = []
     for col in transposed:
         black_detected = False
@@ -30,13 +30,14 @@ def separate_number(img):
             # on est peut etre sorti d'une image
             if parsing_img:
                 new_img = np.transpose(new_img)
-                img_tab.append(new_img)
+                extracted_numbers.append(new_img)
                 new_img = []
                 parsing_img = False
 
+    return extracted_numbers
 
 
+extracted_numbers =separate_numbers_from_img(img_test)
 
-separate_number(img_test)
 model = load_model('model.h5')
 
