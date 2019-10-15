@@ -131,18 +131,3 @@ for frame in im:
     plt.show()
 
         
-
-
-# x=(x_test[0])
-# x=np.expand_dims(x, axis=0)
-# prediction = model.predict(x)
-# print(prediction)
-
-
-# plt.hist(prediction, bins=30)
-# plt.ylabel('Probability');
-# plt.show()
-
-
-# print('Test loss:', score[0])
-# print('Test accuracy:', score[1])
